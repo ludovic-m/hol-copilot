@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 import CartPage from './CartPage';
 import { CartContext, CartItem } from '../context/CartContext';
@@ -23,18 +23,22 @@ vi.mock('./CheckoutModal', () => ({
 
 const mockCartItems: CartItem[] = [
     {
-        id: 1,
+        id: '1',
         name: 'Test Product 1',
         price: 29.99,
         quantity: 2,
-        image: 'test1.jpg'
+        image: 'test1.jpg',
+        reviews: [],
+        inStock: true
     },
     {
-        id: 2,
+        id: '2',
         name: 'Test Product 2',
         price: 49.99,
         quantity: 1,
-        image: 'test2.jpg'
+        image: 'test2.jpg',
+        reviews: [],
+        inStock: true
     }
 ];
 
